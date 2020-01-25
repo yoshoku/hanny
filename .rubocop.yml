@@ -1,7 +1,9 @@
 AllCops:
-  TargetRubyVersion: 2.1
+  TargetRubyVersion: 2.3
   DisplayCopNames: true
   DisplayStyleGuide: true
+  Exclude:
+    - 'hanny.gemspec'
 
 Documentation:
   Enabled: false
@@ -32,7 +34,7 @@ ParameterLists:
 Security/MarshalLoad:
   Enabled: false
 
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Enabled: false
 
 Style/FormatStringToken:
