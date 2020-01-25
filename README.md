@@ -69,12 +69,11 @@ The experiment is carried out on MacBook Early 2016 (Core m3 1.1 GHz CPU and 8 G
 Code:
 ```ruby
 require 'benchmark'
-require 'svmkit'
+require 'rumale'
 require 'hanny'
 
 # Load MNIST data set.
-samples, labels = SVMKit::Dataset.load_libsvm_file('mnist')
-samples = Numo::DFloat.cast(samples)
+samples, labels = Rumale::Dataset.load_libsvm_file('mnist')
 queries = samples[0..5, true]
 targets = samples[6..-1, true]
 qlabels = labels[0..5]
