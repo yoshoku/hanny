@@ -72,6 +72,7 @@ I confirmed the search speed of Hanny's LSH with [MNIST](https://www.csie.ntu.ed
 The experiment is carried out on MacBook Early 2016 (Core m3 1.1 GHz CPU and 8 GB memory).
 
 Code:
+
 ```ruby
 require 'benchmark'
 require 'rumale'
@@ -115,6 +116,7 @@ end
 ```
 
 Result:
+
 ```bash
     user     system      total        real
 LSH
