@@ -4,6 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/yoshoku/Hanny/badge.svg?branch=master)](https://coveralls.io/github/yoshoku/Hanny?branch=master)
 [![Gem Version](https://badge.fury.io/rb/hanny.svg)](https://badge.fury.io/rb/hanny)
 [![BSD 2-Clause License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://github.com/yoshoku/Hanny/blob/master/LICENSE.txt)
+[![Documentation](https://img.shields.io/badge/api-reference-blue.svg)](https://yoshoku.github.io/hanny/doc/)
 
 Hanny is a Hash-based Approximate Nearest Neighbor (ANN) search library in Ruby.
 Hash-based ANN converts vector data into binary codes and builds a hash table by using the binary codes as hash keys.
@@ -26,6 +27,10 @@ And then execute:
 Or install it yourself as:
 
     $ gem install hanny
+
+## Documentation
+
+- [Hanny API Documentation](https://yoshoku.github.io/hanny/doc/)
 
 ## Usage
 
