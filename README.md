@@ -1,7 +1,7 @@
 # Hanny
 
-[![Build Status](https://travis-ci.org/yoshoku/Hanny.svg?branch=master)](https://travis-ci.org/yoshoku/Hanny)
-[![Coverage Status](https://coveralls.io/repos/github/yoshoku/Hanny/badge.svg?branch=master)](https://coveralls.io/github/yoshoku/Hanny?branch=master)
+[![Build Status](https://github.com/yoshoku/hanny/actions/workflows/build.yml/badge.svg)](https://github.com/yoshoku/hanny/actions/workflows/build.yml)
+[![Coverage Status](https://coveralls.io/repos/github/yoshoku/Hanny/badge.svg?branch=main)](https://coveralls.io/github/yoshoku/Hanny?branch=main)
 [![Gem Version](https://badge.fury.io/rb/hanny.svg)](https://badge.fury.io/rb/hanny)
 [![BSD 2-Clause License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://github.com/yoshoku/Hanny/blob/master/LICENSE.txt)
 [![Documentation](https://img.shields.io/badge/api-reference-blue.svg)](https://yoshoku.github.io/hanny/doc/)
