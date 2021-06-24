@@ -86,7 +86,7 @@ module Hanny
 
     # Build a search index.
     # @param x [Numo::DFloat] (shape: [n_samples, n_features]) The dataset for building search index.
-    # @return [SVC] The search index itself that has constructed the hash table.
+    # @return [LSHIndex] The search index itself that has constructed the hash table.
     def build_index(x)
       # Initialize some variables.
       @n_samples, @n_features = x.shape
