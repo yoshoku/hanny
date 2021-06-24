@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/yoshoku/hanny/actions/workflows/build.yml/badge.svg)](https://github.com/yoshoku/hanny/actions/workflows/build.yml)
 [![Coverage Status](https://coveralls.io/repos/github/yoshoku/Hanny/badge.svg?branch=main)](https://coveralls.io/github/yoshoku/Hanny?branch=main)
 [![Gem Version](https://badge.fury.io/rb/hanny.svg)](https://badge.fury.io/rb/hanny)
-[![BSD 2-Clause License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://github.com/yoshoku/Hanny/blob/master/LICENSE.txt)
+[![BSD 2-Clause License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://github.com/yoshoku/Hanny/blob/main/LICENSE.txt)
 [![Documentation](https://img.shields.io/badge/api-reference-blue.svg)](https://yoshoku.github.io/hanny/doc/)
 
 Hanny is a Hash-based Approximate Nearest Neighbor (ANN) search library in Ruby.
@@ -153,4 +153,4 @@ The gem is available as open source under the terms of the [BSD 2-clause License
 
 ## Code of Conduct
 
-Everyone interacting in the Hanny project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/yoshoku/Hanny/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Hanny project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/yoshoku/Hanny/blob/main/CODE_OF_CONDUCT.md).
