@@ -190,7 +190,7 @@ module Hanny
     # @param q [Numo::DFloat] (shape: [n_queries, n_features]) The data for search queries.
     # @param radius [Float] The hamming radius for search range.
     # @return [Array<Integer>] The data indices of search result.
-    def search_radius(q, radius: 1)
+    def search_radius(q, radius: 1.0)
       # Initialize some variables.
       n_queries, = q.shape
       candidates = Array.new(n_queries) { [] }
