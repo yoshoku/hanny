@@ -1,0 +1,27 @@
+module Hanny
+  class LSHIndex
+    attr_reader code_length: Integer
+    attr_reader n_samples: Integer
+    attr_reader n_features: Integer
+    attr_reader n_keys: Integer
+    attr_reader hash_table: Hash[Symbol, Array[Integer]]
+    attr_reader hash_codes: Numo::Bit
+    attr_reader random_seed: untyped
+    attr_reader rng: Random
+
+    def initialize: (?code_length: Integer code_length, ?random_seed: Integer? random_seed) -> void
+    def hash_function: (Numo::DFloat x) -> Numo::Bit
+    def build_index: (Numo::DFloat x) -> LSHIndex
+    def append_data: (Numo::DFloat x) -> Array[Integer]
+    def remove_data: (Array[Integer] data_ids) -> Array[Integer]
+    def search_knn: (Numo::DFloat q, ?n_neighbors: Integer n_neighbors) -> Array[Array[Integer]]
+    def search_radius: (Numo::DFloat q, ?radius: Float radius) -> Array[Array[Integer]]
+
+    private
+
+    def symbolized_hash_key: (Numo::Bit bin_code) -> Symbol
+    def distances_to_hash_codes: (Numo::Bit bin_code) -> Array[Float]
+    def sort_with_index: (Array[Float] arr) -> Array[[Float, Integer]]
+    def decoded_hash_key: (Symbol hash_key) -> Numo::Bit
+  end
+end

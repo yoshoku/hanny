@@ -1,0 +1,30 @@
+module Numo
+  class NArray
+    def self.asarray: (untyped) -> untyped
+    def self.zeros: (*untyped) -> untyped
+    def concatenate: (*untyped arrays, ?axis: untyped) -> untyped
+    def delete: (untyped indice, ?untyped axis) -> untyped
+    def dot: (untyped b) -> untyped
+    def shape: () -> Array[Integer]
+  end
+
+  class DFloat < NArray
+    def self.[]: (*untyped) -> untyped
+    def -@: () -> untyped
+    def +: (untyped) -> untyped
+    def -: (untyped) -> untyped
+    def *: (untyped) -> untyped
+    def /: (untyped) -> untyped
+    def []: (*untyped) -> untyped
+    def []=: (*untyped) -> untyped
+  end
+
+  class Bit < NArray
+    def self.[]: (*untyped) -> untyped
+    def self.cast: (untyped) -> untyped
+    def []: (*untyped) -> untyped
+    def []=: (*untyped) -> untyped
+    def ^: (untyped) -> untyped
+    def to_a: () -> untyped
+  end
+end

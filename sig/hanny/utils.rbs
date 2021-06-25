@@ -1,0 +1,7 @@
+module Hanny
+  module Utils
+    def self.euclidean_distance: (Numo::DFloat x, ?Numo::DFloat? y) -> Numo::DFloat
+    def self.rand_uniform: (Array[Integer] shape, Random rng) -> Numo::DFloat
+    def self.rand_normal: (Array[Integer] shape, Random rng, ?Float mu, ?Float sigma) -> Numo::DFloat
+  end
+end

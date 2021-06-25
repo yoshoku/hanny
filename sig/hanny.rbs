@@ -1,0 +1,3 @@
+module Hanny
+  VERSION: String
+end
