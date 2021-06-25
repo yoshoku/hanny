@@ -65,13 +65,8 @@ module Hanny
     # @param random_seed [Integer/NilClass] The seed value using to initialize the random generator.
     def initialize(code_length: 256, random_seed: nil)
       @code_length = code_length
-      @n_samples = nil
-      @n_features = nil
-      @n_keys = nil
       @last_id = nil
       @weight_mat = nil
-      @hash_table = nil
-      @hash_codes = nil
       @random_seed = random_seed
       @random_seed ||= srand
       @rng = Random.new(@random_seed)
