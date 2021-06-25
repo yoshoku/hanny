@@ -2,6 +2,6 @@
 
 # Hanny is a hash-based approximate nearest neighbor search library.
 module Hanny
-  # @!visibility private
-  VERSION = '0.1.0'
+  # The version of Hanny you are using.
+  VERSION = '0.2.0'
 end
