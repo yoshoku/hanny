@@ -1,14 +1,16 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
   DisplayCopNames: true
   DisplayStyleGuide: true
+  NewCops: enable
   Exclude:
     - 'hanny.gemspec'
 
-Documentation:
-  Enabled: false
-
-Metrics/LineLength:
+Layout/LineLength:
   Max: 140
   IgnoredPatterns: ['(\A|\s)#']
 
@@ -28,7 +30,7 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
 
-ParameterLists:
+Metrics/ParameterLists:
   Max: 10
 
 Security/MarshalLoad:
