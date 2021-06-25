@@ -152,12 +152,14 @@ module Hanny
       removed_data_ids = []
       data_ids.each do |query_id|
         # Remove data id from hash table.
-        hash_key = @hash_table.keys.select { |k| @hash_table[k].include?(query_id) }.first
+        hash_key = @hash_table.keys.find { |k| @hash_table[k].include?(query_id) }
         next if hash_key.nil?
+
         @hash_table[hash_key].delete(query_id)
         removed_data_ids.push(query_id)
         # Remove the hash key if there is no data.
         next unless @hash_table[hash_key].empty?
+
         target_id = distances_to_hash_codes(decoded_hash_key(hash_key)).index(0)
         @hash_codes = @hash_codes.delete(target_id, 0)
       end
@@ -200,6 +202,7 @@ module Hanny
       n_queries.times do |m|
         sort_with_index(distances_to_hash_codes(bin_q[m, true])).each do |d, n|
           break if d > radius
+
           candidates[m] = candidates[m] | @hash_table[symbolized_hash_key(@hash_codes[n, true])]
         end
       end
@@ -266,7 +269,7 @@ module Hanny
     # @param hash_key [Symbol]
     # @return [Numo::Bit]
     def decoded_hash_key(hash_key)
-      bin_code = Zlib::Inflate.inflate(hash_key.to_s).split('').map(&:to_i)
+      bin_code = Zlib::Inflate.inflate(hash_key.to_s).chars.map(&:to_i)
       Numo::Bit[*bin_code]
     end
   end
