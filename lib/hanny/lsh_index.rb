@@ -89,7 +89,8 @@ module Hanny
     # @return [LSHIndex] The search index itself that has constructed the hash table.
     def build_index(x)
       # Initialize some variables.
-      @n_samples, @n_features = x.shape
+      @n_samples = x.shape[0]
+      @n_features = x.shape[1]
       @hash_table = {}
       @hash_codes = []
       @weight_mat = Utils.rand_normal([@n_features, @code_length], @rng)
@@ -117,7 +118,7 @@ module Hanny
     # @return [Array<Integer>] The indices of appended data in search index
     def append_data(x)
       # Initialize some variables.
-      n_new_samples, = x.shape
+      n_new_samples = x.shape[0]
       bin_x = hash_function(x)
       added_data_ids = []
       # Store samples to binary hash table.
@@ -173,7 +174,7 @@ module Hanny
     # @return [Array<Integer>] The data indices of search result.
     def search_knn(q, n_neighbors: 10)
       # Initialize some variables.
-      n_queries, = q.shape
+      n_queries = q.shape[0]
       candidates = Array.new(n_queries) { [] }
       # Binarize queries.
       bin_q = hash_function(q)
@@ -194,7 +195,7 @@ module Hanny
     # @return [Array<Integer>] The data indices of search result.
     def search_radius(q, radius: 1.0)
       # Initialize some variables.
-      n_queries, = q.shape
+      n_queries = q.shape[0]
       candidates = Array.new(n_queries) { [] }
       # Binarize queries.
       bin_q = hash_function(q)
