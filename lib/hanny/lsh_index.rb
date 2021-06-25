@@ -209,39 +209,6 @@ module Hanny
       candidates
     end
 
-    # Dump marshal data.
-    # @return [Hash] The marshal data for search index.
-    def marshal_dump
-      { code_length: @code_length,
-        n_samples: @n_samples,
-        n_features: @n_features,
-        n_keys: @n_keys,
-        last_id: @last_id,
-        weight_mat: @weight_mat,
-        bias_vec: @bias_vec,
-        hash_table: @hash_table,
-        hash_codes: @hash_codes,
-        random_seed: @random_seed,
-        rng: @rng }
-    end
-
-    # Load marshal data.
-    # @return [nil]
-    def marshal_load(obj)
-      @code_length = obj[:code_length]
-      @n_samples = obj[:n_samples]
-      @n_features = obj[:n_features]
-      @n_keys = obj[:n_keys]
-      @last_id = obj[:last_id]
-      @weight_mat = obj[:weight_mat]
-      @bias_vec = obj[:bias_vec]
-      @hash_table = obj[:hash_table]
-      @hash_codes = obj[:hash_codes]
-      @random_seed = obj[:random_seed]
-      @rng = obj[:rng]
-      nil
-    end
-
     private
 
     # Convert binary code to symbol as hash key.
