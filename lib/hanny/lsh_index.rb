@@ -175,9 +175,11 @@ module Hanny
       bin_q = hash_function(q)
       # Find k-nearest neighbors for each query.
       n_queries.times do |m|
-        sort_with_index(distances_to_hash_codes(bin_q[m, true])).each do |_, n|
+        sort_with_index(distances_to_hash_codes(bin_q[m, true])).each do |d, n|
           candidates[m] = candidates[m] | @hash_table[symbolized_hash_key(@hash_codes[n, true])]
-          break if candidates[m].size >= n_neighbors
+          # TODO: Investigate the cause of the steep Ruby::BreakTypeMismatch error.
+          # break if candidates[m].size >= n_neighbors
+          break [[d, n]] if candidates[m].size >= n_neighbors
         end
         candidates[m] = candidates[m].shift(n_neighbors)
       end
@@ -197,7 +199,9 @@ module Hanny
       # Find k-nearest neighbors for each query.
       n_queries.times do |m|
         sort_with_index(distances_to_hash_codes(bin_q[m, true])).each do |d, n|
-          break if d > radius
+          # TODO: Investigate the cause of the steep Ruby::BreakTypeMismatch error.
+          # break if d > radius
+          break [[d, n]] if d > radius
 
           candidates[m] = candidates[m] | @hash_table[symbolized_hash_key(@hash_codes[n, true])]
         end
