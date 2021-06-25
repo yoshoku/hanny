@@ -87,21 +87,21 @@ module Hanny
       @n_samples = x.shape[0]
       @n_features = x.shape[1]
       @hash_table = {}
-      @hash_codes = []
       @weight_mat = Utils.rand_normal([@n_features, @code_length], @rng)
       # Convert samples to binary codes.
       bin_x = hash_function(x)
       # Store samples to binary hash table.
+      codes = []
       @n_samples.times do |m|
         bin_code = bin_x[m, true]
         hash_key = symbolized_hash_key(bin_code)
         unless @hash_table.key?(hash_key)
-          @hash_codes.push(bin_code.to_a)
+          codes.push(bin_code.to_a)
           @hash_table[hash_key] = []
         end
         @hash_table[hash_key].push(m)
       end
-      @hash_codes = Numo::Bit.cast(@hash_codes)
+      @hash_codes = Numo::Bit.cast(codes)
       # Update some variables.
       @n_keys = @hash_codes.shape[0]
       @last_id = @n_samples
