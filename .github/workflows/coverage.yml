@@ -17,10 +17,7 @@ jobs:
           ruby-version: '2.7'
           bundler-cache: true
       - name: Build and test with Rake
-        run: |
-          gem install bundler
-          bundle install
-          bundle exec rake
+        run: bundle exec rake
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v1.1.2
         with:
