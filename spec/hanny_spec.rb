@@ -29,7 +29,7 @@ RSpec.describe Hanny do
   end
   let(:index) { Hanny::LSHIndex.new(code_length: code_length, random_seed: 1) }
 
-  it 'searches k-nearest neighbors for each query.' do
+  it 'searches k-nearest neighbors for each query.', :aggregate_failures do
     index.build_index(targets)
 
     expect(index.code_length).to eq(code_length)
@@ -52,7 +52,7 @@ RSpec.describe Hanny do
     expect(t_labels[candidates.map(&:first)]).to eq(q_labels)
   end
 
-  it 'searches nearest neighbors within specified hamming radius for each query.' do
+  it 'searches nearest neighbors within specified hamming radius for each query.', :aggregate_failures do
     index.build_index(targets)
 
     candidates = index.search_radius(queries, radius: 0)
@@ -74,7 +74,7 @@ RSpec.describe Hanny do
     expect(t_labels[candidates.map(&:first)]).to eq(q_labels)
   end
 
-  it 'calculates the euclidean distance matrix.' do
+  it 'calculates the euclidean distance matrix.', :aggregate_failures do
     bf_dist_mat = Numo::DFloat.zeros(n_queries, n_targets)
     n_queries.times do |m|
       n_targets.times do |n|
@@ -88,7 +88,7 @@ RSpec.describe Hanny do
     expect(dist_mat).to be_within(1.0e-8).of(bf_dist_mat)
   end
 
-  it 'dumps and restores search index using Marshal.' do
+  it 'dumps and restores search index using Marshal.', :aggregate_failures do
     index.build_index(targets)
     cp = Marshal.load(Marshal.dump(index))
     expect(index.class).to eq(cp.class)
