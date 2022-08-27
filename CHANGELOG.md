@@ -1,3 +1,6 @@
+# 0.2.2
+- Refactor codes and configs with RuboCop
+
 # 0.2.1
 - Remove dependent gem's type declaration file from installation files.
 
