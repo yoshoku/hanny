@@ -11,5 +11,6 @@
 .rspec_status
 
 *.swp
+*.lock
 .DS_Store
 .ruby-version
